@@ -1,2 +1,9 @@
-# custom-flair-classifier
-This repo contains code for building a text classifier using the flair library. This was originally written for my internship project at HTX. It has however been modified to maintain project confidentiality and can be used for custom text classification.
+# Custom Text Classification with flair
+
+Text classification is an important tool in natural language processing (NLP) in that it enables extraction of keywords in a large corpus. Standard named entity recognition (NER) models can only identify certain classes of words such as person names, organizations and locations. However, there is increasing value in being able to extract custom entities such as chemical compounds or even trivial classes such as colors. 
+
+During my summer internship at the Data Science & Artificial Intelligence (DSAI) department at the Home Team Science and Technology Agency (HTX), I developed a custom text classifier using a flair, new-and-upcoming NLP library. flair models are able to achieve state-of-the-art results and are easy to implement. More information on flair can be found at the original repo: https://github.com/flairNLP/flair. The unique feature of flair is that it allows stacking of popular word embeddings, which enables the model to learn context through combinations of complex word representations. This results in better f1-scores.
+
+To use the code, you will need csv files containing the text corpus at word level with at least the words and their corresponding NER tags. For instance, to identify colors, words should be either tagged with 'Color' or 'O', which indicates that it is outside of named entities. Use the 'Pre-processing with flair' file to pre-process the data into a flair-friendly format and obtain the train, test and validation files. Thereafter, use the 'Text Classifier with flair' file to import the train, test and validation files and train the classifier. For faster training, the use of Google Colab is recommended.
+
+This repo contains codes for building a text classifier using the flair library. They were originally written for my internship project at HTX. f1-scores of 0.9405 and 0.8712 were achieved for classification of two distinct NER tags. The codes have however been modified to maintain project confidentiality and can be used for custom text classification.
